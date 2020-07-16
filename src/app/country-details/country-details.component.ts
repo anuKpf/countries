@@ -10,8 +10,8 @@ export class CountryDetailsComponent implements DoCheck {
   @Input() detail;
   constructor() {
   }
-  ngDoCheck() {
-      document.getElementById('imageFlag').setAttribute('href',this.detail.flag);
+  ngDoCheck(): void {
+    document.getElementById('imageFlag').setAttribute('href', this.detail.flag);
   }
 
 

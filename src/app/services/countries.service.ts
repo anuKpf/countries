@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
 })
 export class GetCountryService {
 
-  private REST_API_SERVER = "https://restcountries.eu/rest/v2/region/";
+  private REST_API_SERVER = 'https://restcountries.eu/rest/v2/region/';
 
   constructor(private httpClient: HttpClient) { }
 
-  public sendGetRequest(region: string) : Observable<any>{
+  public sendGetRequest(region: string): Observable<any>{
     return this.httpClient.get(this.REST_API_SERVER + region, {responseType: 'json'});
   }
 }

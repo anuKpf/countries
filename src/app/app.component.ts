@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, FormControl } from "@angular/forms";
+import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { GetCountryService } from './services/countries.service';
 import { HttpResponse } from '@angular/common/http';
-import { RootObject } from './model/RootObject'
+import { RootObject } from './model/RootObject';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,7 +22,7 @@ export class AppComponent {
     });
   }
 
-  showCountry(event) {
+  showCountry(event): void {
 
     this.dataService.sendGetRequest(event.target.value)
       .subscribe((data: RootObject[]) => {
@@ -37,20 +37,20 @@ export class AppComponent {
         window.sessionStorage.setItem('country', JSON.stringify(data));
 
 
-      })
+      });
 
   }
 
-  showCountryTable(event) {
+  showCountryTable(event): void {
 
     this.dataAPI.forEach(element => {
       if (element.name === event.target.value) {
 
-        this.detail['name'] = element['name'];
-        this.detail['capital'] = element['capital'];
-        this.detail['population'] = element['population'];
-        this.detail['currencies'] = element['currencies'];
-        this.detail['flag'] = element['flag'];
+        this.detail[`name`] = element[`name`];
+        this.detail[`capital`] = element[`capital`];
+        this.detail[`population`] = element[`population`];
+        this.detail[`currencies`] = element[`currencies`];
+        this.detail[`flag`] = element[`flag`];
       }
 
     });
