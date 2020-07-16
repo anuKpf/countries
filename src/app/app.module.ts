@@ -7,12 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CountryDetailsComponent } from './country-details/country-details.component';
-import { RegionsComponent } from './regions/regions.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    CountryDetailsComponent,
-    RegionsComponent
+    CountryDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,28 +1,31 @@
-<div class="container">
+<div class="container" style="padding: 5%;">
   <div [formGroup]="myGroup">
     <div class="row">
-      <div class="col-md-12">
-
+      <div class="col-md-1">
         <label>Region: </label>
+      </div>
+      <div class="col-md-11">
         <select (change)="showCountry($event)" formControlName="region">
           <option value="Regions" disabled>Choose your Region</option>
           <option *ngFor="let region of regions" [value]="region">{{region}}</option>
         </select>
-
       </div>
 
     </div>
-    <hr>
+
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-1">
         <label *ngIf="myGroup.controls.region.value">Country: </label>
+
+      </div>
+      <div class="col-md-11">
         <select *ngIf="myGroup.controls.region.value" (change)="showCountryTable($event)" formControlName="country">
           <option value="Countriess" disabled>Choose your Country</option>
           <option *ngFor="let country of countries" [value]="country">{{country}}</option>
         </select>
       </div>
     </div>
-    <hr>
+
 
     <div class="row">
       <div class="col-md-12">
